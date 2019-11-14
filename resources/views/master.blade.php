@@ -25,18 +25,18 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
-    // let Table = {
-    //     init: function () {
-    //         $('.table').DataTable({
-    //             "scrollY": 450,
-    //             "scrollX": true
-    //         });
-    //     }
-    // };
+    let Table = {
+        init: function () {
+            $('.table').DataTable({
+                "scrollY": 450,
+                "scrollX": true
+            });
+        }
+    };
 
-    // jQuery(document).ready(function () {
-    //     Table.init();
-    // });
+    jQuery(document).ready(function () {
+        Table.init();
+    });
     </script>
 
      @stack('footer-scripts')
