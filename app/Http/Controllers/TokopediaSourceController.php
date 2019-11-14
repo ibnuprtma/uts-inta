@@ -64,6 +64,9 @@ class TokopediaSourceController extends Controller
         
         // return view('flower',['output'=>$strArray]);
 
+        $str = "dadi Huruf Cilik";
+        $output   =strtolower($str);
+
         $attributes = $request->input('atribute');
         
         $a = array();
@@ -73,6 +76,7 @@ class TokopediaSourceController extends Controller
                 array_push($a, $b);
             }
         }
+        return view('tokopedia.case-folding',['output'=>$output,'a'=>$a]);
     }
 
     public function stopword(Request $request)
