@@ -34,9 +34,11 @@ class TokopediaSourceController extends Controller
         $attributes = $request->input('atribute');
         
         $a = array();
-        foreach($attributes as $attribute){
-            $b = $attribute;
-            array_push($a, $b);
+        if(isset($attributes)){
+            foreach($attributes as $attribute){
+                $b = $attribute;
+                array_push($a, $b);
+            }
         }
 
         $tokenizerFactory  = new \Sastrawi\Tokenizer\TokenizerFactory();
@@ -65,9 +67,11 @@ class TokopediaSourceController extends Controller
         $attributes = $request->input('atribute');
         
         $a = array();
-        foreach($attributes as $attribute){
-            $b = $attribute;
-            array_push($a, $b);
+        if(isset($attributes)){
+            foreach($attributes as $attribute){
+                $b = $attribute;
+                array_push($a, $b);
+            }
         }
     }
 
@@ -91,9 +95,11 @@ class TokopediaSourceController extends Controller
         $attributes = $request->input('atribute');
         
         $a = array();
-        foreach($attributes as $attribute){
-            $b = $attribute;
-            array_push($a, $b);
+        if(isset($attributes)){
+            foreach($attributes as $attribute){
+                $b = $attribute;
+                array_push($a, $b);
+            }
         }
 
         $stopWordRemoverFactory = new \Sastrawi\StopWordRemover\StopWordRemoverFactory();
@@ -128,11 +134,12 @@ class TokopediaSourceController extends Controller
         $attributes = $request->input('atribute');
         
         $a = array();
-        foreach($attributes as $attribute){
-            $b = $attribute;
-            array_push($a, $b);
+        if(isset($attributes)){
+            foreach($attributes as $attribute){
+                $b = $attribute;
+                array_push($a, $b);
+            }
         }
-
         $stemmerFactory = new \Sastrawi\Stemmer\StemmerFactory();
         $stemmer  = $stemmerFactory->createStemmer();
         $str = 'adalah apakah itu, asd';
@@ -160,9 +167,11 @@ class TokopediaSourceController extends Controller
         $attributes = $request->input('atribute');
         
         $a = array();
-        foreach($attributes as $attribute){
-            $b = $attribute;
-            array_push($a, $b);
+        if(isset($attributes)){
+            foreach($attributes as $attribute){
+                $b = $attribute;
+                array_push($a, $b);
+            }
         }
        
         $unwantedChars = array(',', '.',';',':','(',')','-','/','!', '?'); // create array with unwanted chars
@@ -191,9 +200,11 @@ class TokopediaSourceController extends Controller
         $attributes = $request->input('atribute');
         
         $a = array();
-        foreach($attributes as $attribute){
-            $b = $attribute;
-            array_push($a, $b);
+        if(isset($attributes)){
+            foreach($attributes as $attribute){
+                $b = $attribute;
+                array_push($a, $b);
+            }
         }
 
         $str = '?apakah itu dan apa';
