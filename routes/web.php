@@ -21,4 +21,5 @@ Route::get('/tokopedia/search/{method}','TokopediaSourceController@search')->nam
 Route::get('/shopee', 'ShopeeSourceController@index')->name('shopee.index');
 Route::get('/shopee/search/{method}','ShopeeSourceController@search')->name('shopee.search');
 
-Route::get('/mediated-schema', 'MediatedSchemaController@index')->name('mediated-schema.index');
+Route::get('/mediated', 'MediatedSchemaController@index')->name('mediated.index');
+Route::get('/mediated/getData', 'MediatedSchemaController@getData')->name('mediated.getData');
