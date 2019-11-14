@@ -31,17 +31,25 @@ class TokopediaSourceController extends Controller
         
         // return view('ftoken',['output'=>$strArray]);
 
+        $attributes = $request->input('atribute');
+        
+        $a = array();
+        foreach($attributes as $attribute){
+            $b = $attribute;
+            array_push($a, $b);
+        }
+
         $tokenizerFactory  = new \Sastrawi\Tokenizer\TokenizerFactory();
         $tokenizer = $tokenizerFactory->createDefaultTokenizer();
         $str = "saya adalah manusia";
         $tokens = $tokenizer->tokenize($str);
         $output = implode(" | ",$tokens);
 
-        dd($output);
+        return view('tokopedia.tokenizing',['output'=>$output,'a'=>$a]);
 
     }
     
-    public function casefolding()
+    public function casefolding(Request $request)
     {
         // $female = female::select('review')->get();
         // $strArray = array();
@@ -53,9 +61,17 @@ class TokopediaSourceController extends Controller
         // }
         
         // return view('flower',['output'=>$strArray]);
+
+        $attributes = $request->input('atribute');
+        
+        $a = array();
+        foreach($attributes as $attribute){
+            $b = $attribute;
+            array_push($a, $b);
+        }
     }
 
-    public function stopword()
+    public function stopword(Request $request)
     {
         
         // $female = female::select('review')->get();
@@ -72,16 +88,26 @@ class TokopediaSourceController extends Controller
         // //Perekonomian Indonesia sedang pertumbuhan membanggakan
         // return view('fstopword',['output'=>$strArray]);
 
+        $attributes = $request->input('atribute');
+        
+        $a = array();
+        foreach($attributes as $attribute){
+            $b = $attribute;
+            array_push($a, $b);
+        }
+
         $stopWordRemoverFactory = new \Sastrawi\StopWordRemover\StopWordRemoverFactory();
         $stopword = $stopWordRemoverFactory->createStopWordRemover();
         $str = 'apakah itu yang diperlukan dan';
         $output   = $stopword->remove($str);
         dd($output);
+
+        return view('tokopedia.stopword',['output'=>$output,'a'=>$a]);
     }
 
    
 
-    public function stemming()
+    public function stemming(Request $request)
     {
         // $stemmerFactory = new \Sastrawi\Stemmer\StemmerFactory();
         // $stemmer  = $stemmerFactory->createStemmer();
@@ -99,14 +125,24 @@ class TokopediaSourceController extends Controller
         // }
         // return view('/fstemming',['output'=>$strArray]);
 
+        $attributes = $request->input('atribute');
+        
+        $a = array();
+        foreach($attributes as $attribute){
+            $b = $attribute;
+            array_push($a, $b);
+        }
+
         $stemmerFactory = new \Sastrawi\Stemmer\StemmerFactory();
         $stemmer  = $stemmerFactory->createStemmer();
         $str = 'adalah apakah itu, asd';
         $output   = $stemmer->stem($str);
         dd($output);
+
+        return view('tokopedia.stemming',['output'=>$output,'a'=>$a]);
     }
 
-    public function tandabaca(){
+    public function tandabaca(Request $request){
         // $female = female::select('review')->get();
 
         // $strArray = array();
@@ -120,15 +156,25 @@ class TokopediaSourceController extends Controller
         // }
 
         // return view('/fbaca',['hello'=>$strArray]);
+
+        $attributes = $request->input('atribute');
+        
+        $a = array();
+        foreach($attributes as $attribute){
+            $b = $attribute;
+            array_push($a, $b);
+        }
        
         $unwantedChars = array(',', '.',';',':','(',')','-','/','!', '?'); // create array with unwanted chars
         $str = 'aku adalah satu,";';
         $hello = str_replace($unwantedChars, '', $str); // remove them
         $hello = strtolower($hello); // convert to lowercase
         dd($hello);
+
+        return view('tokopedia.tanda-baca',['output'=>$hello,'a'=>$a]);
     }
 
-    public function katatanya(){
+    public function katatanya(Request $request){
         // $female = female::select('review')->get(); 
 
         // $strArray = array();
@@ -142,14 +188,24 @@ class TokopediaSourceController extends Controller
         // }
         // return view('/ftanya',['hello'=>$strArray]);
 
+        $attributes = $request->input('atribute');
+        
+        $a = array();
+        foreach($attributes as $attribute){
+            $b = $attribute;
+            array_push($a, $b);
+        }
+
         $str = '?apakah itu dan apa';
         $unwantedChars = array('Kenapa', 'kenapa','Mengapa', 'mengapa','Bagaimana', 'bagaimana','Apa', 'apa', 'Siapa', 'siapa', 'kapan', 'Kapan', ',', '.',';',':','(',')','/','!', '?'); // create array with unwanted chars
         $hello = str_replace($unwantedChars, '', $str); // remove them
         $hello = strtolower($hello); // convert to lowercase
         dd($hello);
+
+        return view('tokopedia.kata-tanya',['output'=>$hello,'a'=>$a]);
     }
 
-    public function removemot() {
+    public function removemot(Request $request) {
 
         $clean_text = "Your function does not remove this emoji: 🇬🇧️🤗🤣️🥊 You can improve your regexp by taking ready intervals from the Emoji 11 specification";
     
