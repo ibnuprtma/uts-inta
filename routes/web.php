@@ -22,4 +22,4 @@ Route::get('/shopee', 'ShopeeSourceController@index')->name('shopee.index');
 Route::get('/shopee/search/{method}','ShopeeSourceController@search')->name('shopee.search');
 
 Route::get('/mediated', 'MediatedSchemaController@index')->name('mediated.index');
-Route::get('/mediated/getData', 'MediatedSchemaController@getData')->name('mediated.getData');
+Route::get('/mediated/getData/{tokped}/{shopee}', 'MediatedSchemaController@getData')->name('mediated.getData');
