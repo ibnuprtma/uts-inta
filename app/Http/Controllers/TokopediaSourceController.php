@@ -148,7 +148,6 @@ class TokopediaSourceController extends Controller
         $stemmer  = $stemmerFactory->createStemmer();
         $str = 'adalah apakah itu, asd';
         $output   = $stemmer->stem($str);
-        dd($output);
 
         return view('tokopedia.stemming',['output'=>$output,'a'=>$a]);
     }
@@ -182,7 +181,6 @@ class TokopediaSourceController extends Controller
         $str = 'aku adalah satu,";';
         $hello = str_replace($unwantedChars, '', $str); // remove them
         $hello = strtolower($hello); // convert to lowercase
-        dd($hello);
 
         return view('tokopedia.tanda-baca',['output'=>$hello,'a'=>$a]);
     }
@@ -215,7 +213,6 @@ class TokopediaSourceController extends Controller
         $unwantedChars = array('Kenapa', 'kenapa','Mengapa', 'mengapa','Bagaimana', 'bagaimana','Apa', 'apa', 'Siapa', 'siapa', 'kapan', 'Kapan', ',', '.',';',':','(',')','/','!', '?'); // create array with unwanted chars
         $hello = str_replace($unwantedChars, '', $str); // remove them
         $hello = strtolower($hello); // convert to lowercase
-        dd($hello);
 
         return view('tokopedia.kata-tanya',['output'=>$hello,'a'=>$a]);
     }

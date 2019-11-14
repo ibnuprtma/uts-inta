@@ -111,7 +111,6 @@ class ShopeeSourceController extends Controller
         $stopword = $stopWordRemoverFactory->createStopWordRemover();
         $str = 'apakah itu yang diperlukan dan';
         $output   = $stopword->remove($str);
-        dd($output);
 
         return view('shopee.stopword',['output'=>$output,'a'=>$a]);
     }
@@ -149,7 +148,6 @@ class ShopeeSourceController extends Controller
         $stemmer  = $stemmerFactory->createStemmer();
         $str = 'adalah apakah itu, asd';
         $output   = $stemmer->stem($str);
-        dd($output);
 
         return view('shopee.stemming',['output'=>$output,'a'=>$a]);
     }
@@ -183,7 +181,6 @@ class ShopeeSourceController extends Controller
         $str = 'aku adalah satu,";';
         $hello = str_replace($unwantedChars, '', $str); // remove them
         $hello = strtolower($hello); // convert to lowercase
-        dd($hello);
 
         return view('shopee.tanda-baca',['output'=>$hello,'a'=>$a]);
     }
@@ -216,7 +213,6 @@ class ShopeeSourceController extends Controller
         $unwantedChars = array('Kenapa', 'kenapa','Mengapa', 'mengapa','Bagaimana', 'bagaimana','Apa', 'apa', 'Siapa', 'siapa', 'kapan', 'Kapan', ',', '.',';',':','(',')','/','!', '?'); // create array with unwanted chars
         $hello = str_replace($unwantedChars, '', $str); // remove them
         $hello = strtolower($hello); // convert to lowercase
-        dd($hello);
 
         return view('shopee.kata-tanya',['output'=>$hello,'a'=>$a]);
     }
