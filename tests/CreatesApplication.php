@@ -6,6 +6,9 @@ use Illuminate\Contracts\Console\Kernel;
 
 trait CreatesApplication
 {
+
+    //test
+
     /**
      * Creates the application.
      *
